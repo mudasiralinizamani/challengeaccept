@@ -1,0 +1,62 @@
+{% extends 'Base/Base.html' %}
+
+{% load static %} 
+
+{% block title %}Challenge Accept | Login{% endblock %} 
+
+{% block css_1 %} {% static 'CSS/Accounts/Login/Login.css'%} {% endblock %}
+
+
+
+{% block body %}
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="column is-4 is-offset-4">
+        <h3 class="title has-text-black">Login</h3>
+        <hr class="login-hr" />
+        <p class="subtitle has-text-black">Please login to proceed.</p>
+        <div class="box">
+          <figure class="avatar">
+            <img src="{% static 'PICS/User.jpg' %}" />
+          </figure>
+          {% for message in messages %}
+          <p id="messages">{{message}}</p>
+          {% endfor %}
+          <form method="POST" action="">
+            {% csrf_token %}
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="text"
+                  name="username"
+                  placeholder="Your Username"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="control">
+                <input
+                  class="input is-medium"
+                  type="password"
+                  name="password"
+                  placeholder="Your Password"
+                />
+              </div>
+            </div>
+            
+            <button type="submit" class="button is-block is-info is-medium is-fullwidth">
+              Login <i class="fa fa-sign-in" aria-hidden="true"></i>
+            </button>
+          </form>
+        </div>
+        <p class="has-text-grey">
+          <a href="{% url 'Signup' %}">Sign Up</a> &nbsp;·&nbsp;
+          <a href="../">Forgot Password</a> &nbsp;
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

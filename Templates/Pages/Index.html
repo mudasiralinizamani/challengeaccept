@@ -1,0 +1,138 @@
+{% extends 'Base/Base.html' %}
+{% load static %}
+
+{% block active_home %} is-active {% endblock %}
+
+{% block css_1 %} {% static 'CSS/Pages/Index/Index.css' %} {% endblock %}
+
+{% block body %}
+<section id="top" class="section">
+    <div id="title-1">
+      <h2 id="title-1-heading-1" class="is-size-3-desktop is-size-4">Accept Challenges</h2>
+      <h3 id="title-1-heading-2" class="is-size-4-desktop is-size-5">& Win</h3>
+    </div>
+    <div id="title-2">
+      <div class="">
+        {% if user.is_authenticated %}
+        <h3 class="is-size-5">Hi, {{ user.first_name|title }}!</h3>
+        <a href="">Courses</a>
+        <a href="">Blogs</a>
+        <a href="">Projects</a>
+        {% else %}
+        <h3>Hi</h3>
+        <a href="">Contact</a>
+        <a href="">About</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="black-overlay"></div>
+</section>
+<section class="blog-posts">
+    <div class="container">
+        <div class="columns">
+        <div class="column is-10 is-offset-1">
+            <div class="columns featured-post is-multiline">
+            <div class="column is-12 post">
+                <article class="columns featured">
+                <div class="column is-7 post-img ">
+                    <img src="https://cdn.emk.dev/templates/featured-image.png" alt="">
+                </div>
+                <div class="column is-5 featured-content va">
+                    <div>
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">1st Wave</h1>
+                    <p class="post-excerpt">Complete All the Challenges and Win</p>
+                    <br>
+                    <a href="#" class="button is-primary">Accepted</a>
+                    </div>
+
+                </div>
+                </article>
+            </div>
+            </div>
+            <hr>
+            <div class="columns is-multiline">
+            <div class="column post is-6">
+                <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Challenge 1</h1>
+                    <p class="post-excerpt">This is the First Challenge</p>
+                    <br>
+                    <a href="#" class="button is-primary">Complete</a>
+                </div>
+                </article>
+            </div>
+            <div class="column post is-6">
+                <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Challenge 2</h1>
+                    <p class="post-excerpt">This is the Second Challenge</p>
+                    <br>
+                    <a href="#" class="button is-primary">Complete</a>
+                </div>
+                </article>
+            </div>
+            <div class="column post is-4">
+                <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                    <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                    <br>
+                    <a href="#" class="button is-primary">Read More</a>
+                </div>
+                </article>
+            </div>
+            <div class="column post is-4">
+                <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                    <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                    <br>
+                    <a href="#" class="button is-primary">Read More</a>
+                </div>
+                </article>
+            </div>
+            <div class="column post is-4">
+                <article class="columns is-multiline">
+                <div class="column is-12 post-img">
+                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+                </div>
+                <div class="column is-12 featured-content ">
+                    <h3 class="heading post-category">Category Name</h3>
+                    <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+                    <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+                    <br>
+                    <a href="#" class="button is-primary">Read More</a>
+                </div>
+                </article>
+            </div>
+            </div>
+        </div>
+        </div>
+        challengeaccept.com
+</section>
+
+
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'JS/JQuerry/jquery.min.js' %}"></script>
+<script src="{% static 'JS/Pages/Index.js' %}"></script>
+{% endblock %}

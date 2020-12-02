@@ -1,0 +1,13 @@
+
+#nav-logo {
+  border-radius: 45%;
+}
+
+
+#nav-logo:hover{
+  background-color: transparent;
+}
+
+.navbar-item {
+  background-color: transparent;
+}
