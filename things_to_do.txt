@@ -1,0 +1,14 @@
+
+Ttheme: Red, White, Black
+
+Make a Form  pop up
+
+
+
+for signup and login, instead of redirecting to different page . Can we do a side right side nav pop up type
+
+
+make website in red white and black theme
+
+
+and an otp authentication

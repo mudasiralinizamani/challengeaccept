@@ -4,3 +4,10 @@ from django.shortcuts import render
 
 def Index(req):
     return render(req, 'Pages/Index.html')
+
+
+def About(req):
+    return render(req, 'Pages/About.html')
+
+def Contact(req):
+    return render(req, 'Pages/Contact.html')

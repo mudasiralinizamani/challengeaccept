@@ -49,10 +49,10 @@
   <body>
     <!-- Header And Navigation Bar - Mudasir Ali -->
     <header>
-      <nav class="navbar has-shadow is-light">
+      <nav class="navbar has-shadow is-dark">
         <div class="navbar-brand">
           <a href="{% url 'Index' %}" class="navbar-item">
-            <img src="{% static 'PICS/LOGOS/web-logo.jpg' %}" alt="" style="max-height: 60px" />
+            <img src="{% static 'PICS/LOGOS/web-logo.jpg' %}" alt="" style="max-height: 50px; border-radius: 50%;" />
           </a>
           <a
             role="button"
@@ -74,12 +74,12 @@
               >Home</a
             >
             <a
-              href=""
+              href="{% url 'About' %}"
               class="navbar-item {% block active_about %} {% endblock %}"
               >About</a
             >
             <a
-              href=""
+              href="{% url 'Contact' %}"
               class="navbar-item {% block active_contact %} {% endblock %}"
               >Contact</a
             >
@@ -91,7 +91,7 @@
                 <div class="profile" onclick="menu();">
                   <img src="{% static 'PICS/User.jpg' %}" alt="" style="max-height: 80%;"  />
                 </div>
-                <div class="menu hide" id="user-menu">
+                <div class="menu user-menu-hide" id="user-menu">
                   <h3>{{user.first_name}} {{user.last_name}}</h3>
                   <ul>
                     <li>
@@ -112,13 +112,13 @@
                 </div>
               </div>
               {% else %}
-              <a href="{% url 'Signup' %}" class="button is-success is-rounded"
+              <a href="{% url 'Signup' %}" class="button is-rounded is-danger"
                 >Signup</a
               >
-              <a
-                href="{% url 'Login' %}"
-                class="button is-warning ml-2 is-rounded"
-                >Login</a
+              <button
+                onclick="openLoginForm()"
+                class="button is-warning ml-2 is-rounded is-light"
+                >Login</button
               >
               {% endif %}
             </div>
@@ -129,7 +129,7 @@
     <!-- Messages to the User - Mudasir Ali -->
     {% if messages %}
         {% for message in messages %}
-            <article class="message is-{{message.tags}}" id="my-message-box">
+            <article class="message is-{{message.tags}}" id="my-message-box" style="max-width: 20rem;">
             <div class="message-header">
                 <p>Message</p>
                 <button class="delete" id="delete-message" aria-label="delete"></button>
@@ -139,6 +139,41 @@
         {% endfor %}
     {% endif %}
 
+<!-- User Login Model - Mudasir Ali -->
+<div class="popup-overlay"></div>
+<div class="popup-login">
+  <div class="popup-close" onclick="closeLoginForm()">&times;</div>
+  <div class="form">
+    <div class="avatar">
+      <img src="{% static 'PICS/User.jpg' %}" alt="" />
+    </div>
+    <div class="header">Login</div>
+    <form action="{% url 'API_Login' %}" method="post">
+      {% csrf_token %}
+      {% if messages %}
+      {% for message in messages %}
+        <p style="text-align: center;">{{message}}</p>
+      {% endfor %}
+    {% endif %}
+    <div class="element">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="You Username"/>
+    </div>
+    <div class="element">
+      <label for="password">Password</label>
+      <input type="password" id="password"  name="password" placeholder="Your Pasword" />
+    </div>
+    <div class="element">
+      <button
+        type="submit"
+        class="button is-block is-info is-medium is-fullwidth"
+      >
+        Login <i class="fa fa-sign-in" aria-hidden="true"></i>
+      </button>
+    </div>
+  </form>
+  </div>
+</div>
 
     <!-- Body tag for Templates - Mudasir Ali -->
     {% block body %}

@@ -1,0 +1,75 @@
+{% extends 'Base/Base.html' %}
+{% load static %}
+{% block title %}Challenge Accept | Contact{% endblock %}
+
+{% block active_contact %} is-active {% endblock %}
+{% block css_1 %} {% static 'CSS/Pages/Contact/Contact.css' %} {% endblock %}
+
+{% block body %}
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <div class="columns is-8 is-variable">
+        <div class="column is-two-thirds has-text-left">
+          <h1 class="title is-1">Contact Me</h1>
+          <p class="is-size-4">
+            Hey. If you find any issue in my website, plz tell me.
+          </p>
+          <div class="social-media">
+            <a
+              href=""
+              target="_blank"
+              class="button is-light is-large"
+              ><i class="fa fa-facebook-square" aria-hidden="true"></i
+            ></a>
+            <a
+              href=""
+              target="_blank"
+              class="button is-light is-large"
+              ><i class="fa fa-instagram" aria-hidden="true"></i
+            ></a>
+            <a
+              href=""
+              target="_blank"
+              class="button is-light is-large"
+              ><i class="fa fa-twitter" aria-hidden="true"></i
+            ></a>
+          </div>
+        </div>
+        <div class="column is-one-third has-text-left">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="field">
+              <label class="label">Name</label>
+              <div class="control">
+                <input class="input is-medium" name="name" type="text" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input is-medium" name="email" type="text" />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Message</label>
+              <div class="control">
+                <textarea class="textarea is-medium" name="message"></textarea>
+              </div>
+            </div>
+            <div class="control">
+              <button
+                type="submit"
+                class="button is-link is-fullwidth has-text-weight-medium is-medium"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

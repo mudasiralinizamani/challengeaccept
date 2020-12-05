@@ -5,12 +5,12 @@
 
 //Query All input fields
 var form_fields = document.getElementsByTagName("input");
-form_fields[1].placeholder = "Username..";
-form_fields[2].placeholder = "Firstname..";
-form_fields[3].placeholder = "Lastname..";
-form_fields[4].placeholder = "Email..";
-form_fields[5].placeholder = "Enter password...";
-form_fields[6].placeholder = "Re-enter Password...";
+form_fields[4].placeholder = "Username..";
+form_fields[5].placeholder = "Firstname..";
+form_fields[6].placeholder = "Lastname..";
+form_fields[7].placeholder = "Email..";
+form_fields[8].placeholder = "Enter password...";
+form_fields[9].placeholder = "Re-enter Password...";
 
 for (var field in form_fields) {
   form_fields[field].className += " form-control";

@@ -35,7 +35,21 @@ user_button.addEventListener("click", () => {
   user_dropdown.classList.add("is-active");
 });
 
+
 function menu() {
   const menu = document.getElementById("user-menu");
   menu.classList.toggle("active");
 }
+
+
+
+// Toggling Signup And Login Modal - Mudasir Ali
+function openLoginForm() {
+  document.body.classList.add("showLoginForm");
+
+};
+
+function closeLoginForm() {
+  document.body.classList.remove("showLoginForm");
+};
+

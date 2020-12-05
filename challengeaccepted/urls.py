@@ -23,6 +23,9 @@ admin.site.site_title = "Challenge Accept Admin Panel"
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', view.Index, name='Index'),
-    
-    path('accounts/', include('accounts.urls'))
+    path('about/', view.About, name='About'),
+    path('contact/', view.Contact, name='Contact'),
+
+
+    path('accounts/', include('accounts.urls')),
 ]

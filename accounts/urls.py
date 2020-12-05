@@ -9,4 +9,7 @@ urlpatterns = [
    path('login/', views.Login, name="Login"),
    path('logout/', views.Logout, name="Logout"),
    path('profile/', views.Profile, name="Profile"),
+
+
+   path('api-login/', views.API_Login, name='API_Login'),
 ]
