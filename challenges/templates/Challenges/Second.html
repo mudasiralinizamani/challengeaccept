@@ -1,0 +1,39 @@
+{% extends 'Base/Base.html' %}
+
+
+{% block title %} Challenge Accept | Challenge Second {% endblock %}
+
+{% block body %}
+
+<section class="hero is-light">
+    <div class="hero-body">
+      <div class="container" style="height: 60vh;">
+        <h1 class="title">
+            First Challenge
+        </h1>
+        <h2 class="subtitle">
+          Upload a Video or Photo
+        </h2>
+        <div class="input-fields">
+            <form  method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            
+            <p class="m-2">
+                <label for="img">Image: </label>
+                <input type="file" name="Image" id="img" accept="image/*">
+            </p>
+
+            <p class="m-2">
+                <label for="vid">Video: </label>
+                <input type="file" name="Video" id="vid" accept="video/*">
+            </p>
+
+            <button class="button is-primary" type="submit">Upload</button>
+        </form>
+        </div>
+      </div>
+    </div>
+</section>    
+
+
+{% endblock %}

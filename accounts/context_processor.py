@@ -1,4 +1,4 @@
-from .  import forms
+from .views import Registered_Users_List
 
-def API_Signup_Form(req):
-    return {'api_signup_form': forms.CreateUserForm}
+def Give_Registered_Users(req):
+    return {'registered_users': Registered_Users_List}

@@ -1,38 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="ghost_style.css">
-
-    <style>
-        .box {
-            height: 70vh;
-            padding: 10px 10px;
-            font-family: "Source Sans Pro", sans-serif;
-            display: flex;
-            background-image: url("../Static/Videos/launch.gif");
-            background-color: #191b1f;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            justify-content: flex-start;
-            align-items: center;
-            }
-    </style>
-
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="../Static/CSS/Bulma/bulma.css">
+   <link rel="stylesheet" href="ghost_style.css">
 </head>
+
 <body>
+
+   <!-- Header And Navigation Bar - Mudasir Ali -->
+   <header>
+      <nav class="navbar has-shadow is-dark">
+         <div class="navbar-brand">
+            <a href="{% url 'Index' %}" class="navbar-item">
+               <img src="../Static/PICS/LOGOS/web-logo.jpg" alt="" style="max-height: 50px; border-radius: 50%;" />
+            </a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+               <span aria-hidden="true"></span>
+               <span aria-hidden="true"></span>
+               <span aria-hidden="true"></span>
+            </a>
+         </div>
+         
+         <div class="navbar-menu" id="nav-links">
+            
+            <div class="navbar-start">
+               <div class="sign">
+                  <span class="fast-flicker">C</span>hall<span class="flicker">e</span>nge <span class="fast-flicker ml-1">A</span> <span class="flicker">cce</span>pt
+                </div>
+               <a href="{% url 'Index' %}" class="navbar-item">Home</a>
+               <a href="{% url 'About' %}" class="navbar-item">About</a>
+               <a href="{% url 'Contact' %}" class="navbar-item">Contact</a>
+            </div>
+            <div class="navbar-end">
+               <a href="" class="button is-rounded is-danger">Signup</a>
+               <button onclick="openLoginForm()" class="button is-warning ml-2 is-rounded is-light">Login</button>
+            </div>
+         </div>
+         </div>
+      </nav>
+   </header>
+   <!-- Navigation Bar END -->
+
+
     
-    <!-- <section class="sec">
-        <img src="../Static/Videos/launch.gif" alt="" srcset="">
-    </section> -->
 
-    <div class="box">
-
-    </div>
 
 </body>
+
 </html>

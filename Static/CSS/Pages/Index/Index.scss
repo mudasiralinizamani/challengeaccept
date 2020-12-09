@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif&family=Nunito+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Codystar:300&display=swap");
 
 .va {
   display: flex;
@@ -95,13 +96,13 @@ hr {
   color: #f3f0f0;
   z-index: 1;
 
-  h2 {
-    font-size: 1.8rem;
+  #title-1-heading-1 {
+    font-size: 1rem;
     position: relative;
     left: -500px;
   }
 
-  h3 {
+  #title-1-heading-2 {
     font-size: 1.5rem;
     position: relative;
     bottom: -500px;
@@ -122,46 +123,34 @@ hr {
   opacity: 0;
 }
 
-// CSS for Startup Welcome Screen - Mudasir Ali
-// .intro {
-//   background: black;
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// }
-// .slider {
-//   background: rgb(97, 105, 109);
-//   position: fixed;
-//   top: 0;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   transform: translateY(100%);
-// }
 
-// .text {
-//   color: rgb(233, 233, 233);
-//   font-size: 3rem;
-// }
+// For Glowing text on the TOP of Index page, Accept Challenges and WIN
+.neons {
+  font-family: "Codystar";
+}
 
-// .intro-text {
-//   color: rgb(233, 233, 233);
-//   font-family: "Heebo", sans-serif;
-//   font-size: 3rem;
-// }
+.neons h1 {
+  // font-size: 3rem;
+  font-weight: bold;
+  -webkit-animation: glow 2s ease-in-out infinite alternate;
+  -moz-animation: glow 2s ease-in-out infinite alternate;
+  animation: glow 2s ease-in-out infinite alternate;
+}
 
-// .hide {
-//   background: black;
-//   overflow: hidden;
-//   display: block !important;
-// }
+@-webkit-keyframes glow {
+  from {
+    color: #fff;
+    text-shadow: 0 0 10px #00fff2, 0 0 20px #00fff2, 0 0 30px #00fff2,
+      0 0 40px #00fff2, 0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2,
+      0 0 90px #00fff2;
+  }
 
-// .hide span {
-//   transform: translateY(100%);
-//   display: inline-block;
-// }
+  to {
+    color: gray;
+    text-shadow: 0 0 20px #00fff2, 0 0 30px #00fff2, 0 0 40px #00fff2,
+      0 0 50px #00fff2, 0 0 60px #00fff2, 0 0 70px #00fff2, 0 0 80px #00fff2,
+      0 1 90px #00fff2;
+  }
+}
+
+// END

@@ -27,7 +27,7 @@ SECRET_KEY = '30ign8^wk3nola_a&mx#@7y2%6m)8@0yz4_^5pgnuo(%#h)kua'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'f2c8dcf5e4f3.ngrok.io']
 
 
 # Application definition
@@ -46,6 +46,7 @@ DEFAULT_APPS = [
 LOCAL_APPS = [
     'main.apps.MainConfig',
     'accounts.apps.AccountsConfig',
+    'challenges.apps.ChallengesConfig'
 ]
 
 # These are the third party apps - Mudasir Ali
@@ -56,6 +57,7 @@ THIRD_PARTY_APPS = [
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# Combining all the Apps Together - Mudasir Ali
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
@@ -81,7 +83,10 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'accounts.context_processor.API_Signup_Form'
+
+                # These are the Context Processors the I Created - Mudasir Ali
+                'challenges.context_processors.Challenge_User',
+                'accounts.context_processor.Give_Registered_Users',
             ],
         },
     },
@@ -137,12 +142,28 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+# Setting Static Functionality - Mudasir Ali
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Static')]
 STATIC_ROOT = os.path.join(BASE_DIR, 'Static_Files')
 
+# Setting Media Functionality - Mudasir Ali
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'Static/Media')
+
+
 # Changing Django message tags - Mudasir Ali
 MESSAGE_TAGS = {
     messages.ERROR: 'danger'
 }
+
+
+# Setting Email Backend - Mudasir Ali
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST_USER = "mudasiralinizamani@gmail.com"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_PASSWORD = "mudasir123451"

@@ -27,6 +27,21 @@
         </div>
         <div class="column right has-text-centered">
           <h1 class="title is-4">Sign up today</h1>
+          {% if otp %}
+          <form  method="POST" action="">
+            {% csrf_token %}
+            <div class="field">
+              Enter OTP:
+              <div class="control">
+                <input class="input is-medium" type="text" name="otp" placeholder="OTP">
+                <input type="hidden" name="usr" value="{{user.username}}">
+              </div>
+            </div>
+            <button class="button is-block is-primary is-fullwidth is-medium">Verify</button>
+            <br />
+          </form>
+          <p>Already have an account? <a href="{% url 'Index' %}">login</a></p>
+          {% else %}
           <form  method="POST" action="">
             {% csrf_token %}
             <div class="field">
@@ -38,6 +53,7 @@
             <br />
           </form>
           <p>Already have an account? <a href="{% url 'Index' %}">login</a></p>
+          {% endif %}
         </div>
       </div>
     </div>

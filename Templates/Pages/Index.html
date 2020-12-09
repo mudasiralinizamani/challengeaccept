@@ -8,8 +8,8 @@
 {% block body %}
 <section id="top" class="section">
     <div id="title-1">
-      <h2 id="title-1-heading-1" class="is-size-3-desktop is-size-4">Accept Challenges</h2>
-      <h3 id="title-1-heading-2" class="is-size-4-desktop is-size-5">& Win</h3>
+      <div id="title-1-heading-1" class="is-size-3-desktop is-size-4 neons"><h1>Accept Challenges</h1></div>
+      <div id="title-1-heading-2" class="is-size-4-desktop is-size-5 neons" style="margin-top: 5px;"><h1>& Win</h1></div>
     </div>
     <div id="title-2">
       <div class="">
@@ -31,101 +31,91 @@
     <div class="container">
         <div class="columns">
         <div class="column is-10 is-offset-1">
+            {% if user_fullname in first_challenge_users %}
             <div class="columns featured-post is-multiline">
             <div class="column is-12 post">
                 <article class="columns featured">
                 <div class="column is-7 post-img ">
-                    <img src="https://cdn.emk.dev/templates/featured-image.png" alt="">
+                    <img src="{% static 'PICS/Index/challenge_1.jpg' %}" alt="">
                 </div>
                 <div class="column is-5 featured-content va">
                     <div>
-                    <h3 class="heading post-category">Category Name</h3>
-                    <h1 class="title post-title">1st Wave</h1>
-                    <p class="post-excerpt">Complete All the Challenges and Win</p>
+                    <h3 class="heading post-category">You already Participated in this Challenge</h3>
+                    <h1 class="title post-title">1st Challenge </h1>
+                    <p class="post-excerpt">Take Pictures of Sun or Shoot Videos of Sun</p>
                     <br>
-                    <a href="#" class="button is-primary">Accepted</a>
+                    <a href="{% url 'Challenges_First' %}" class="button is-primary">Participate Again</a>
                     </div>
-
                 </div>
                 </article>
             </div>
             </div>
             <hr>
-            <div class="columns is-multiline">
-            <div class="column post is-6">
-                <article class="columns is-multiline">
-                <div class="column is-12 post-img">
-                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+            {% else %}
+            <div class="columns featured-post is-multiline">
+                <div class="column is-12 post">
+                    <article class="columns featured">
+                    <div class="column is-7 post-img ">
+                        <img src="{% static 'PICS/Index/challenge_1.jpg' %}" alt="">
+                    </div>
+                    <div class="column is-5 featured-content va">
+                        <div>
+                        <h3 class="heading post-category">Challenge</h3>
+                        <h1 class="title post-title">1 st Challenge</h1>
+                        <p class="post-excerpt">Take Pictures of Sun or Shoot Videos of Sun</p>
+                        <br>
+                        <a href="{% url 'Challenges_First' %}" class="button is-primary">Participate</a>
+                        </div>
+                    </div>
+                    </article>
                 </div>
-                <div class="column is-12 featured-content ">
-                    <h3 class="heading post-category">Category Name</h3>
-                    <h1 class="title post-title">Challenge 1</h1>
-                    <p class="post-excerpt">This is the First Challenge</p>
+                </div>
+                <hr>
+            {% endif %}
+
+            {% if user_fullname in second_challenge_users %}
+            <div class="columns featured-post is-multiline">
+            <div class="column is-12 post">
+                <article class="columns featured">
+                <div class="column is-7 post-img ">
+                    <img src="{% static 'PICS/Index/challenge_2.jpg' %}" alt="">
+                </div>
+                <div class="column is-5 featured-content va">
+                    <div>
+                    <h3 class="heading post-category">You already Participated in this Challenge</h3>
+                    <h1 class="title post-title">2 second Challenge </h1>
+                    <p class="post-excerpt">Take Pictures of your pet or Shoot Videos with your pet</p>
                     <br>
-                    <a href="#" class="button is-primary">Complete</a>
-                </div>
-                </article>
-            </div>
-            <div class="column post is-6">
-                <article class="columns is-multiline">
-                <div class="column is-12 post-img">
-                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
-                </div>
-                <div class="column is-12 featured-content ">
-                    <h3 class="heading post-category">Category Name</h3>
-                    <h1 class="title post-title">Challenge 2</h1>
-                    <p class="post-excerpt">This is the Second Challenge</p>
-                    <br>
-                    <a href="#" class="button is-primary">Complete</a>
-                </div>
-                </article>
-            </div>
-            <div class="column post is-4">
-                <article class="columns is-multiline">
-                <div class="column is-12 post-img">
-                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
-                </div>
-                <div class="column is-12 featured-content ">
-                    <h3 class="heading post-category">Category Name</h3>
-                    <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
-                    <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
-                    <br>
-                    <a href="#" class="button is-primary">Read More</a>
-                </div>
-                </article>
-            </div>
-            <div class="column post is-4">
-                <article class="columns is-multiline">
-                <div class="column is-12 post-img">
-                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
-                </div>
-                <div class="column is-12 featured-content ">
-                    <h3 class="heading post-category">Category Name</h3>
-                    <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
-                    <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
-                    <br>
-                    <a href="#" class="button is-primary">Read More</a>
-                </div>
-                </article>
-            </div>
-            <div class="column post is-4">
-                <article class="columns is-multiline">
-                <div class="column is-12 post-img">
-                    <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
-                </div>
-                <div class="column is-12 featured-content ">
-                    <h3 class="heading post-category">Category Name</h3>
-                    <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
-                    <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
-                    <br>
-                    <a href="#" class="button is-primary">Read More</a>
+                    <a href="{% url 'Challenges_Second' %}" class="button is-primary">Participate Again</a>
+                    </div>
                 </div>
                 </article>
             </div>
             </div>
+            <hr>
+            {% else %}
+            <div class="columns featured-post is-multiline">
+                <div class="column is-12 post">
+                    <article class="columns featured">
+                    <div class="column is-7 post-img ">
+                        <img src="{% static 'PICS/Index/challenge_2.jpg' %}" alt="">
+                    </div>
+                    <div class="column is-5 featured-content va">
+                        <div>
+                        <h3 class="heading post-category">Challenge</h3>
+                        <h1 class="title post-title">2 second Challenge</h1>
+                        <p class="post-excerpt">Take Pictures of your pet or Shoot Videos with your pet</p>
+                        <br>
+                        <a href="{% url 'Challenges_Second' %}" class="button is-primary">Participate</a>
+                        </div>
+                    </div>
+                    </article>
+                </div>
+                </div>
+                <hr>
+            {% endif %}            
         </div>
         </div>
-        challengeaccept.com
 </section>
 
 {% endblock %}
@@ -135,3 +125,79 @@
 <script src="{% static 'JS/JQuerry/jquery.min.js' %}"></script>
 <script src="{% static 'JS/Pages/Index.js' %}"></script>
 {% endblock %}
+
+
+
+
+<div class="columns is-multiline">
+    <div class="column post is-6">
+        <article class="columns is-multiline">
+        <div class="column is-12 post-img">
+            <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+        </div>
+        <div class="column is-12 featured-content ">
+            <h3 class="heading post-category">Category Name</h3>
+            <h1 class="title post-title">Challenge 1</h1>
+            <p class="post-excerpt">This is the First Challenge</p>
+            <br>
+            <a href="#" class="button is-primary">Complete</a>
+        </div>
+        </article>
+    </div>
+    <div class="column post is-6">
+        <article class="columns is-multiline">
+        <div class="column is-12 post-img">
+            <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+        </div>
+        <div class="column is-12 featured-content ">
+            <h3 class="heading post-category">Category Name</h3>
+            <h1 class="title post-title">Challenge 2</h1>
+            <p class="post-excerpt">This is the Second Challenge</p>
+            <br>
+            <a href="#" class="button is-primary">Complete</a>
+        </div>
+        </article>
+    </div>
+    <div class="column post is-4">
+        <article class="columns is-multiline">
+        <div class="column is-12 post-img">
+            <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+        </div>
+        <div class="column is-12 featured-content ">
+            <h3 class="heading post-category">Category Name</h3>
+            <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+            <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+            <br>
+            <a href="#" class="button is-primary">Read More</a>
+        </div>
+        </article>
+    </div>
+    <div class="column post is-4">
+        <article class="columns is-multiline">
+        <div class="column is-12 post-img">
+            <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+        </div>
+        <div class="column is-12 featured-content ">
+            <h3 class="heading post-category">Category Name</h3>
+            <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+            <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+            <br>
+            <a href="#" class="button is-primary">Read More</a>
+        </div>
+        </article>
+    </div>
+    <div class="column post is-4">
+        <article class="columns is-multiline">
+        <div class="column is-12 post-img">
+            <img src="https://cdn.emk.dev/templates/post-img.png" alt="Featured Image">
+        </div>
+        <div class="column is-12 featured-content ">
+            <h3 class="heading post-category">Category Name</h3>
+            <h1 class="title post-title">Slightly Longer Blog Post Title</h1>
+            <p class="post-excerpt">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus ratione harum eaque, animi nulla tempore quis, quam voluptatum.</p>
+            <br>
+            <a href="#" class="button is-primary">Read More</a>
+        </div>
+        </article>
+    </div>
+    </div>

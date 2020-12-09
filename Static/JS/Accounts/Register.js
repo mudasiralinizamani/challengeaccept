@@ -3,6 +3,10 @@
 */
 
 
+
+document.getElementById("id_registration_status").checked = true
+
+
 //Query All input fields
 var form_fields = document.getElementsByTagName("input");
 form_fields[4].placeholder = "Username..";

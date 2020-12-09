@@ -10,6 +10,6 @@ urlpatterns = [
    path('logout/', views.Logout, name="Logout"),
    path('profile/', views.Profile, name="Profile"),
 
-
+    # API Login Url
    path('api-login/', views.API_Login, name='API_Login'),
 ]

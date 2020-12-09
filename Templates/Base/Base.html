@@ -1,3 +1,4 @@
+<!-- This is the Base Page of All PAGES - Mudasir Ali -->
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -33,7 +34,7 @@
     <link rel="stylesheet" href="{% static 'CSS/Bulma/bulma.css' %}" />
     <link rel="stylesheet" href="{% static 'CSS/Navbar/Navbar.css' %}" />
 
-    <!-- Tags to import tags for templates - Mudasir Ali -->
+    <!-- Tags to import custom CSS Files for PAGE - Mudasir Ali -->
     <link rel="stylesheet" href="{% block css_1 %} {% endblock %}" />
     <link rel="stylesheet" href="{% block css_2 %} {% endblock %}" />
     <link rel="stylesheet" href="{% block css_3 %} {% endblock %}" />
@@ -68,6 +69,9 @@
 
         <div class="navbar-menu" id="nav-links">
           <div class="navbar-start">
+            <div class="sign">
+              <span class="fast-flicker">C</span>hall<span class="flicker">e</span>nge <span class="fast-flicker ml-1">A</span> <span class="flicker">cce</span>pt
+            </div>
             <a
               href="{% url 'Index' %}"
               class="navbar-item {% block active_home %} {% endblock %}"
@@ -126,6 +130,8 @@
         </div>
       </nav>
     </header>
+    <!-- Navigation Bar END -->
+
     <!-- Messages to the User - Mudasir Ali -->
     {% if messages %}
         {% for message in messages %}
@@ -138,7 +144,8 @@
             </article>
         {% endfor %}
     {% endif %}
-
+    <!-- Message Bar END
+     -->
 <!-- User Login Model - Mudasir Ali -->
 <div class="popup-overlay"></div>
 <div class="popup-login">
@@ -175,7 +182,7 @@
   </div>
 </div>
 
-    <!-- Body tag for Templates - Mudasir Ali -->
+    <!-- Body tag for Pages - Mudasir Ali -->
     {% block body %}
 
     {% endblock %}
@@ -186,7 +193,7 @@
       </div>
     </footer>
 
-
+    <!-- JAVASCRIPT for Navbar -->
     <script src="{% static 'JS/Navbar/Navbar.js' %}"></script>
 
 
