@@ -25,7 +25,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '30ign8^wk3nola_a&mx#@7y2%6m)8@0yz4_^5pgnuo(%#h)kua'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'f2c8dcf5e4f3.ngrok.io']
 
@@ -62,6 +62,7 @@ INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -153,6 +154,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'Static_Files')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'Static/Media')
 
+# Configring WhiteNoise
+
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Changing Django message tags - Mudasir Ali
 MESSAGE_TAGS = {
@@ -162,8 +166,8 @@ MESSAGE_TAGS = {
 
 # Setting Email Backend - Mudasir Ali
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST_USER = "mudasiralinizamani@gmail.com"
+EMAIL_HOST_USER = "challengeaccepted2808@gmail.com"
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_PASSWORD = "mudasir123451"
+EMAIL_HOST_PASSWORD = "challenge1@2"
