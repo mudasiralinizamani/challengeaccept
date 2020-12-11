@@ -46,7 +46,37 @@
             {% csrf_token %}
             <div class="field">
               <div class="control">
-                  {{form | crispy}}
+                    <input class="input is-medium" type="text" name="username" required id="username" placeholder="Username" value="{{typed_username}}">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                    <input class="input is-medium" type="text" name="fname" required placeholder="First name" value="{{typed_firstaname}}">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                    <input class="input is-medium" type="text" name="lname" required placeholder="Last name" value="{{typed_lastname}}">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                    <input class="input is-medium" type="text" name="email" required placeholder="Email" value="{{typed_email}}">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                    <input class="input is-medium" type="password" name="password" required placeholder="Password">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                    <input class="input is-medium" type="password" name="passwordc" required placeholder="Confirm Password">
+              </div>
+            </div>
+            <div class="field">
+              <div class="control">
+                <!-- {{form | crispy}} -->
               </div>
             </div>
             <button class="button is-block is-primary is-fullwidth is-medium">Submit</button>
@@ -93,3 +123,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 <script src="{% static 'JS/Accounts/Register.js' %}"></script>
 {% endblock %}
+
+

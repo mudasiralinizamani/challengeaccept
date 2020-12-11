@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import Contact as ContactModel
 from django.contrib import messages
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django.conf import settings
 
 
@@ -21,6 +21,8 @@ def Contact(req):
         else:
             contact = ContactModel(name=Name, email=Email,subject=Subject, message=Message)
             contact.save()
-            send_mail(Subject, Message, Email, [settings.EMAIL_HOST_USER])
+            email = EmailMessage('Challenge Accept - Verify OTP', f'New Message\nName: {Name}\nEmail: {Email}\nSubject: {Subject}\n\nMessage: \n {Message}', settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
+            email.send()
             messages.success(req, f'Thanks for Contacting, {Name}.')
+            
     return render(req, 'Pages/Contact.html')
