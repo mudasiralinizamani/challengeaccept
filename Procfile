@@ -1,0 +1,1 @@
+web: gunicorn challengeaccept.wsgi --log-file -
